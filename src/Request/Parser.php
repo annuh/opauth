@@ -64,7 +64,7 @@ class Parser implements ParserInterface
         }
         $request = substr($_SERVER['REQUEST_URI'], strlen($this->path) - 1);
 
-        preg_match_all('/\/([A-Za-z0-9-_]+)/', $request, $matches);
+        preg_match_all('/\/([A-Za-z0-9-_\?]+)/', $request, $matches);
         if (!empty($matches[1][0])) {
             $this->urlname = $matches[1][0];
         }
